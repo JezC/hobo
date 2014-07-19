@@ -15,6 +15,9 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('hobo_fields', ["= #{version}"])
   s.add_runtime_dependency('dryml', ["= #{version}"])
   s.add_runtime_dependency('hobo_will_paginate')
+  s.add_runtime_dependency('hobo_clean', ["= #{version}"])
+  s.add_runtime_dependency('hobo_rapid', ["= #{version}"])
+  s.add_runtime_dependency('hobo_jquery_ui', ["= #{version}"])
 
   s.add_development_dependency('rubydoctest', [">= 1.1.3"])
   s.add_development_dependency('shoulda', [">= 0"])

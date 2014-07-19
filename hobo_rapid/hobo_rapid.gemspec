@@ -11,13 +11,13 @@ Gem::Specification.new do |s|
   s.summary = 'The RAPID tag library for Hobo'
   s.description = 'The RAPID tag library for Hobo'
 
-  s.add_runtime_dependency('hobo', ["= #{version}"])
-
   s.files = `git ls-files -x #{name}/* -z`.split("\0")
 
   s.name = name
   s.version = version
   s.date = Date.today.to_s
+
+  s.add_runtime_dependency('hobo_jquery_ui', ["= #{version}"])
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rdoc_options = ["--charset=UTF-8"]

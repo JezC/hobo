@@ -1,11 +1,16 @@
 source "http://rubygems.org"
 
 gem 'rubydoctest', :git => 'git://github.com/bryanlarsen/rubydoctest.git'
-gem 'rails', '~> 3.2.19', '~> 4.0.8', '~> 4.1.4'
-gemspec :path => "../dryml"
-gemspec :path => "../hobo_support"
-gemspec :path => "../hobo_fields"
-gemspec
+gem 'rails', '~> 3.2', '>+ 3.2.19', '~> 4.0', '>= 4.0.8', '~> 4.1', '>= 4.1.4'
+gemspec :path => '../dryml'
+gemspec :path => '../hobo_support'
+gemspec :path => '../hobo_fields'
+gemspec :path => '../hobo_clean'
+gemspec :path => '../hobo_clan_admin'
+gemspec :path => '../hobo_clean_sidemenu'
+gemspec :path => '../hobo_jquery'
+gemspec :path => '../hobo_jquery_ui'
+
 gem 'hobo_will_paginate'
 platform :ruby do
   gem 'sqlite3'

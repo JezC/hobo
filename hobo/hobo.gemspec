@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('hobo_clean_sidemenu', ["= #{version}"])
   s.add_runtime_dependency('hobo_jquery', ["= #{version}"])
   s.add_runtime_dependency('hobo_jquery_ui', ["= #{version}"])
-  s.add_runtime_dependency('hobo_support', ["= #{version}"])
 
   s.add_development_dependency('rubydoctest', [">= 1.1.3"])
   s.add_development_dependency('shoulda', [">= 0"])

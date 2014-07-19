@@ -23,10 +23,9 @@ From Hobo's point of view, you shouldn't need to change almost anything :).
 
 ## Gemfile
 
-Now Hobo uses "will_paginate_hobo" gem, instead of the git repository "git://github.com/Hobo/will_paginate.git". This should make it easier to install in systems without Git installed (users have reported problems with Windows and Git).
+Now Hobo uses "will\_paginate\_hobo" gem, instead of the git repository "git://github.com/Hobo/will\_paginate.git". This should make it easier to install in systems without Git installed (users have reported problems with Windows and Git).
 
 You also need to add the `protected_attributes` gem to your Gemfile.
-
 
 # Internal changes
 
@@ -42,17 +41,17 @@ In order to make Hobo compatible with Rails 4, these are the main changes that h
 
 * `Model.find(:all)` is deprecated
 * `finder.scoped :conditions => conditions` has been replaced with `finder.where(conditions)`
-* raise_on_type_mismatch has been renamed to raise_on_type_mismatch!
+* raise\_on\_type\_mismatch has been renamed to raise\_on\_type\_mismatch!
 
 ## Other
 * `protected_attributes` gem has been added to support the "old" way of protecting attributes
 * Domizio has made Hobo thread safe :)
 * Hobo's custom `will_paginate` has been packaged into the `hobo_will_paginate` gem. This should make possible to install Hobo without Git (it seems to be a bit hard under Windows).
-
-
+* Minimum required version of Rails for Hobo 2.1.1 is 4.0.2; recommended is 4.0.8
+* Minimum version of Ruby that should work is MRI 1.9.3; recommended is MRI 2.1.2
 
 # Running the integration tests:
 
-The integration tests in the "agility_bootstrap" folder have been updated for Hobo 2.1 and Rails 4.
+The integration tests in the "agility\_bootstrap" folder have been updated for Hobo 2.1 and Rails 4.
 
-see https://github.com/Hobo/hobo/blob/master/integration_tests/agility_bootstrap/README
+see https://github.com/Hobo/hobo/blob/master/integration\_tests/agility\_bootstrap/README

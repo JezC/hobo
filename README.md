@@ -1,6 +1,6 @@
 The README for hobo is in hobo/README.
 
-However, you're probably more interested in hobo/CHANGES-1.4.txt or
+However, you're probably more interested in hobo/CHANGES-2.1.markdown or
 http://cookbook.hobocentral.net
 
 ### Unit tests

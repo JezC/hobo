@@ -18,9 +18,6 @@ Contents
 ## Creating a new application
 {.part}
 
-Final hobo 2.0 gems have not yet been released, so the standard instructions
-of "gem install hobo; hobo new foo" do not yet work.
-
 If you're on Linux you'll have to install a javascript runtime.
 On Ubuntu 11.10 you can get one by typing `apt-get install
 nodejs-dev`.  Other Linuxes should be similar.  Windows & OS X users
@@ -34,7 +31,7 @@ source.
 
 ### Via gems from rubygems.org
 
-    gem install hobo --pre
+    gem install hobo -v 2.0
     hobo new foo
 
 ### Via gems from source
@@ -86,13 +83,13 @@ hobo_jquery is the javascript for hobo_rapid, and hobo_clean is the
 default theme.   Instead of or as well as hobo_clean you can use
 hobo_clean_admin or hobo_clean_sidemenu or hobo_bootstrap.
 
-You will also have to ensure that you are using Hobo's fork of will_paginate:
+You will also have to ensure that you are using Hobo's fork of will\_paginate:
 
     gem "will_paginate", :git => "git://github.com/Hobo/will_paginate.git"
 
 ### config/
 
-Most the changes in config/ are due to the assets pipeline.  See
+Most of the changes in config/ are due to the assets pipeline.  See
 http://guides.rubyonrails.org/asset_pipeline.html#upgrading-from-old-versions-of-rails
 
 In addition, you will probably want to add:
@@ -320,7 +317,7 @@ supported in Ruby 2.0.0.
 
 ## rapid_summary tags removed
 
-The rapid\_summary tags have been moved out of core Hobo into their own plugin, https://github.com/Hobo/hobo_summary, which is not yet in a working state
+The rapid\_summary tags have been moved out of core Hobo into their own plugin, https://github.com/Hobo/hobo\_summary, which is not yet in a working state
 
 ## Helper rearrangement
 {.todo}
@@ -336,10 +333,10 @@ Other Helper classes not included in the controller by default are
 HoboDebugHelper, HoboDeprecatedHelper and HoboViewHintHelper.
 
 Several helpers have been moved into
-app/helpers/hobo_deprecated_helper.rb
+app/helpers/hobo\_deprecated_helper.rb
 
 If your application depends on any of these, you can set
-config.hobo.include_deprecated_helper.
+config.hobo.include\_deprecated_helper.
 
 ## Rails 3.2 required
 
@@ -375,11 +372,11 @@ using a form would allow reasonable javascript-disabled behaviour.
 ## Attribute Whitelist
 {.todo}
 
-Rails 3.2.3 and later changed the default for config.whitelist_attributes to true, so any newly generated Hobo apps will have this feature turned on.  Hobo heavily depends on mass attribute assignation, so this may cause inconveniences.
+Rails 3.2.3 and later changed the default for config.whitelist\_attributes to true, so any newly generated Hobo apps will have this feature turned on.  Hobo heavily depends on mass attribute assignation, so this may cause inconveniences.
 
-Mass assignment protection is redundant in Hobo: your primary protection should come through the edit_permitted? function.   If all of your models have properly defined edit_permitted? then it is safe to turn off config.whitelist_attributes.
+Mass assignment protection is redundant in Hobo: your primary protection should come through the edit\_permitted? function.   If all of your models have properly defined edit\_permitted? then it is safe to turn off config.whitelist\_attributes.
 
-If you choose not to turn off config.whitelist_attributes, any fields that are not in your attr_accessible declaration will not be available in forms.   Hobo's generators will now assist in the creation of attr_accessible declarations.
+If you choose not to turn off config.whitelist\_attributes, any fields that are not in your attr\_accessible declaration will not be available in forms.   Hobo's generators will now assist in the creation of attr\_accessible declarations.
 
 ## Enhancements
 
@@ -461,7 +458,7 @@ Hobo has gained two new generators.
 
 `hobo generate install_plugin` may be used from inside a Hobo
 application to install a Hobo plugin.   It modifies the Gemfile,
-application.dryml or X_site.dryml and adds the plugin to
+application.dryml or X\_site.dryml and adds the plugin to
 app/assets/javascripts and app/assets/stylesheets.
 
 `hobo plugin` is used from outside of a Hobo application to create the
@@ -796,28 +793,28 @@ recognize_page_path.slice(:controller,:action,:id).
 Standard form ajax attributes are now also supported, and behave
 similar to `<a>`.
 
-### query_params
+### query\_params
 {.todo}
 
-The old query_params helper has been removed.   You can use
-Rails (request.query_parameters | request.request_parameters) instead
+The old query\_params helper has been removed.   You can use
+Rails (request.query\_parameters | request.request\_parameters) instead
 if you still need it.
 
-There's a new helper function called query_parameters_filtered that
+There's a new helper function called query\_parameters\_filtered that
 returns query parameters with the ajax parameters removed.
 
 ### parse_sort_param
 {.done}
 
-The controller function parse_sort_param has been updated so that it
+The controller function parse\_sort\_param has been updated so that it
 can take a hash instead of or as well as an argument list.  The key of
 the hash is the field name and the value is the column name.
 Example:
 
      Book.include(:authors).order(parse_sort_param(:title, :authors => "authors.last_name")
 
-parse_sort_param now also pluralizes table names. For example, if the
-field is named "project.title", parse_sort_param will sort on the
+parse\_sort\_param now also pluralizes table names. For example, if the
+field is named "project.title", parse\_sort\_param will sort on the
 column "projects.title".
 
 ### controller actions
@@ -827,15 +824,15 @@ Hobo no longer attempts to perform its part-based AJAX actions when
 sent an xhr request. Instead, Hobo performs part-based AJAX when
 `params[:render]` is set.
 
-The signature for the function update_response, index_response and friends have changed.   This should make it useful for use in your application.  update_response is called automatically by hobo_update if you don't render or redirect inside of the block parameter hobo_update.
+The signature for the function update\_response, index\_response and friends have changed.   This should make it useful for use in your application.  update\_response is called automatically by hobo\_update if you don't render or redirect inside of the block parameter hobo\_update.
 
 ### default controller actions now use respond_with
 
-All Hobo model controller actions now use [respond_with](http://apidock.com/rails/ActionController/MimeResponds/respond_with) where appropriate.   This means that you can create an API interface for a controller simply by adding:
+All Hobo model controller actions now use [respond\_with](http://apidock.com/rails/ActionController/MimeResponds/respond_with) where appropriate.   This means that you can create an API interface for a controller simply by adding:
 
     respond_to :html, :json, :xml
 
-See [respond_to](http://apidock.com/rails/ActionController/MimeResponds/ClassMethods/respond_to) and Google for "respond_with" for more information.
+See [respond\_to](http://apidock.com/rails/ActionController/MimeResponds/ClassMethods/respond_to) and Google for "respond_with" for more information.
 
 Note that the JSON and XML interfaces will only use coarse grained
 model-level permission checking rather than fine grained attribute
@@ -849,7 +846,7 @@ Hobo no longer executes an arity zero block passed to hobo controller actions in
       render something if request.format.pdf?
     end
 
-Any formats that you do not render or redirect inside the block will be handled by hobo_show via respond_with.
+Any formats that you do not render or redirect inside the block will be handled by hobo\_show via respond\_with.
 
 If your block has a parameter, the block continues to be executed inside of a respond_to.
 
@@ -902,15 +899,15 @@ use
 
 for more information see http://jquery.malsup.com/form/#file-upload
 
-### hobo_ajax_response
+### hobo\_ajax\_response
 {.done}
 
 the `hobo_ajax_response` function now has a different signature.
-Standard usage doesn't supply any arguments to hobo_ajax_response.
+Standard usage doesn't supply any arguments to hobo\_ajax\_response.
 This use case has not changed.
 
 However, if you have code that supplied arguments to
-hobo_ajax_response, that code likely will need to be updated for 2.0.
+hobo\_ajax\_response, that code likely will need to be updated for 2.0.
 
 FIXME: pointer to AJAX background documentation.
 

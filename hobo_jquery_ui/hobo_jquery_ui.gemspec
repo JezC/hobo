@@ -18,7 +18,6 @@ spec = Gem::Specification.new do |s|
   s.require_paths = ["lib", "vendor", "taglibs"]
 
   s.add_runtime_dependency("jquery-ui-themes", ["~> 0.0.4"])
-  s.add_runtime_dependency('hobo', ["= #{version}"])
   s.add_runtime_dependency('hobo_jquery', ["= #{version}"])
 
 end

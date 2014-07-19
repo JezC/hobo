@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
   s.summary = 'The clean theme for Hobo'
   s.description = File.read(File.expand_path('../README', __FILE__))
 
-  s.add_runtime_dependency('hobo', ["= #{version}"])
   s.add_runtime_dependency('hobo_jquery', ["= #{version}"])
 
   s.files = `git ls-files -x #{name}/* -z`.split("\0")

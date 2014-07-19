@@ -11,9 +11,7 @@ Gem::Specification.new do |s|
   s.summary = 'Core Ruby extensions from the Hobo project'
   s.description = 'Core Ruby extensions from the Hobo project'
 
-  s.add_runtime_dependency('rails', ['~> 4.1', '>= 4.1.4'])
   s.add_runtime_dependency('rails', ['~> 4.0', '>= 4.0.8'])
-  s.add_runtime_dependency('rails', ['~> 3.2', '>= 3.2.19'])
   s.add_development_dependency('rubydoctest', [">= 0"])
 
   s.files = `git ls-files -x #{name}/* -z`.split("\0")

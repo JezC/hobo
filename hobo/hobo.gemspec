@@ -21,21 +21,23 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('hobo_jquery', ["= #{version}"])
   s.add_runtime_dependency('hobo_jquery_ui', ["= #{version}"])
 
-  s.add_development_dependency('rubydoctest', [">= 1.1.3"])
-  s.add_development_dependency('shoulda', [">= 0"])
-  s.add_development_dependency('irt', ["= 1.2.11"])
+  s.add_runtime_dependency('rails', ['~> 4.1', '>= 4.1.4', '~> 4.0', '>= 4.0.8', '~> 3.2', '>= 3.2.19'])
+
+  s.add_development_dependency('rubydoctest', ['>= 1.1.3'])
+  s.add_development_dependency('shoulda', ['>= 0'])
+  s.add_development_dependency('irt', ['= 1.2.11'])
   s.add_development_dependency('mocha')
   s.add_development_dependency('yard')
 
-  s.executables = ["hobo"]
+  s.executables = ['hobo']
   s.files = `git ls-files -x #{name}/* -z`.split("\0")
 
   s.name = name
   s.version = version
   s.date = Date.today.to_s
 
-  s.required_rubygems_version = ">= 1.3.6"
-  s.rdoc_options = ["--charset=UTF-8"]
-  s.require_paths = ["lib"]
+  s.required_rubygems_version = '>= 1.3.6'
+  s.rdoc_options = ['--charset=UTF-8']
+  s.require_paths = ['lib']
 
 end
